@@ -109,16 +109,7 @@ const requestOptions = {
 
 fetch("https://api.airtable.com/v0/appZFFKMuPYcE31Qf/tblBcsbuFmV3LEd94", requestOptions)
   .then(response => response.json())
-  .then(result => 
-	setUserCards(result.records.reverse())
-	// setslisedUcards(userCards.slice(0, 4))
-	// console.log(userCards)
-	
-	// console.log(userCards)
-			// result.records.forEach(element => {
-			// 	console.log(element)
-			// })
-			)
+  .then(result => setUserCards(result.records.reverse()))
   .catch(error => console.log('error', error))
 	
   setslisedUcards(userCards.slice(0, 4)),
@@ -155,7 +146,7 @@ var requestOptions = {
 
 fetch("https://api.airtable.com/v0/appZFFKMuPYcE31Qf/tblBcsbuFmV3LEd94", requestOptions)
   .then(response => response.text())
-  .then(result => console.log(/*result*/'результат 6'))
+  .then(result => console.log(/*result*/'Внесены данные о победителе'))
   .catch(error => console.log('error', error));
 }
 
@@ -297,21 +288,17 @@ function PopupON() {
 
 }
 
-// выключить попап
+// выключить попап. выполняется при нажатии кнопки GREATE
 
 async function PopupOFF() {
 	const xxx = document.getElementsByClassName('popup_container')[0];
-	//console.log(xxx)
+	
 	xxx.style.display = 'none';
-	// if (wheelResult==='JACKPOT') {
-	// 	setBalanceRes(balanceRes+1000)
-	// } else {
-	// 	setBalanceRes(balanceRes+Number(wheelResult))
-	// }
+	
 	await wheelResult==='JACKPOT' ? setBalanceRes(balanceRes+1000) : setBalanceRes(balanceRes+Number(wheelResult)) 
 	await updateAirtableUser(balanceRes+Number(wheelResult-1), currentUser);
 	await fetchData();
-	// await setWinnerTable(userVK.photo_200, userVK.first_name, userVK.last_name,  Number(wheelResult))
+	
 	setWheel('roulet__wheel');
 	
 }
@@ -360,12 +347,9 @@ fetch("https://api.airtable.com/v0/appZFFKMuPYcE31Qf/tblp7uWgdy7lDuMat", request
 		await setWheel(wheelArray[x].wClass);
 		await setWinnerTable(userVK.photo_200, userVK.first_name, userVK.last_name,  Number(wheelArray[x].Value));
 		
-		await getWinnerList()
-		// await wheelResult==='JACKPOT' ? setBalanceRes((balanceRes+1000)-1) : setBalanceRes(balanceRes+Number(wheelResult));
-		console.log('ID пользователя: '+currentUser);
-		console.log(wheelResult);
-		// console.log('balanceRes: '+balanceRes);
-		// await updateAirtableUser(balanceRes+Number(wheelResult-1), currentUser);
+		await getWinnerList();
+		
+		
 		console.log('balanceRes: '+balanceRes);
 		setTimeout(function () {
 			PopupON()
@@ -383,10 +367,10 @@ fetch("https://api.airtable.com/v0/appZFFKMuPYcE31Qf/tblp7uWgdy7lDuMat", request
 		<div className="App">
      
 	 <header className='header'>
-				<div className='btnGroupe'>
+				{/* <div className='btnGroupe'>
 					<img className='iconPoints'src={IconPoints} alt="иконка с точками"/>
 					<img src={IconCencel} alt="крестик"/>
-				</div>
+				</div> */}
 			</header>
       <div className="content-container">
 	  
