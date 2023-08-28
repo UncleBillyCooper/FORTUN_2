@@ -4,13 +4,15 @@ import bridge, {send} from '@vkontakte/vk-bridge';
 // import '@vkontakte/vkui/dist/vkui.css';
 
 import './styles/App.css'
-import IconPoints from "./img/IconPoints.png";
-import IconCencel from "./img/IconCencel.png";
+// import IconPoints from "./img/IconPoints.png";
+// import IconCencel from "./img/IconCencel.png";
 import Wheel from "./img/wheel.png";
 import RouletPointer from "./img/wheel-pointer.png";
 import Gold from "./img/coins.png";
 import WinnerCard from "./components/WinnerCard";
+
 import GoldBig from "./img/coins_big.png";
+
 
 
 const App = () => {
@@ -31,59 +33,9 @@ const App = () => {
 		{wClass: 'roulet__wheel s8', Value: '250'},
 	];
 
-	const defaultUserCards = [
-	{
-		  id: 'rec7vahzIGZiX01Ns',
-	fields: {
-	ava: 'https://ic.pics.livejournal.com/staatsieherheit/27598713/319962/319962_900.jpg',
-	VKid: 111222333,
-	firstname: 'Петр',
-	balance: 500,
-	lastWin: 500,
-	surname: 'Петров',
-	PlayerID: 'rec7vahzIGZiX01Ns'
-	}
-		},
-	{
-		  id: 'recayTU63bE7KVZPw',
-	fields: {
-	ava: 'https://ic.pics.livejournal.com/staatsieherheit/27598713/319962/319962_900.jpg',
-	VKid: 111222333,
-	firstname: 'Евгений ',
-	balance: 700,
-	lastWin: 400,
-	surname: 'Иванов',
-	PlayerID: 'recayTU63bE7KVZPw'
-	}
-		},
-	{
-		  id: 'recghtbbgqY3avkHw',
-	fields: {
-	ava: 'https://ic.pics.livejournal.com/staatsieherheit/27598713/319962/319962_900.jpg',
-	VKid: 69393013,
-	firstname: 'Иван',
-	balance: 1000,
-	lastWin: 700,
-	surname: 'Иванов',
-	PlayerID: 'recghtbbgqY3avkHw'
-	}
-		},
-	{
-		  id: 'recgkGqgKqNZOVqzF',
-	fields: {
-	ava: 'https://ic.pics.livejournal.com/staatsieherheit/27598713/319962/319962_900.jpg',
-	VKid: 111111111111,
-	firstname: 'Анастасия',
-	balance: 900,
-	lastWin: 200,
-	surname: 'Сергеева',
-	PlayerID: 'recgkGqgKqNZOVqzF'
-	}
-		}
 	
- ]
 
-	const [userCards, setUserCards] = useState(defaultUserCards)
+	const [userCards, setUserCards] = useState([])
 	const [slisedUcards, setslisedUcards] = useState(userCards)
 	// let slicedUserCards = userCards;
 	// console.log(userCards)
@@ -402,9 +354,9 @@ fetch("https://api.airtable.com/v0/appZFFKMuPYcE31Qf/tblp7uWgdy7lDuMat", request
 		  
           <div className="cards_list">
 			
-			{slisedUcards.map(userCard=>
-				<WinnerCard gold={Gold} usCard={userCard} key={userCard.id}/>
-			)}
+			{userCards.length !== 0 ? slisedUcards.map(slisedUcard => <WinnerCard gold={Gold} usCard={slisedUcard} key={slisedUcard.id}/>) : "Список победителей пуст"}
+		
+			
 		 
 		   </div>
         </div>
