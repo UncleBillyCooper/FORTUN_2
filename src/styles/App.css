@@ -187,6 +187,10 @@ body{
      
   }
 
+  .roulet__wheel:hover{
+    animation: RotateS8 2s cubic-bezier(.24,.31,.57,.87) 1 normal forwards;
+  }
+
       /* transform: rotate(340deg);  *//*Джекпот s1*/
       /* transform: rotate(385deg); *//*750 s2*/
       /* transform: rotate(430deg); *//*200 s3*/
@@ -235,7 +239,7 @@ body{
     }
   
     100%{
-      transform: rotate(6800deg); 
+      transform: rotate(6820deg); 
       
     }
   }
@@ -248,7 +252,7 @@ body{
   
     100%{
       
-      transform: rotate(7700deg);
+      transform: rotate(7580deg);
       
     }
   }
@@ -261,7 +265,7 @@ body{
   
     100%{
       
-      transform: rotate(8600deg);
+      transform: rotate(8710deg);
       
     }
   }
@@ -274,7 +278,7 @@ body{
   
     100%{
       
-      transform: rotate(9500deg);
+      transform: rotate(9480deg);
       
     }
   }
@@ -287,7 +291,7 @@ body{
   
     100%{
       
-      transform: rotate(10400deg);
+      transform: rotate(10240deg);
       
     }
   }
@@ -300,7 +304,7 @@ body{
   
     100%{
       
-      transform: rotate(11300deg);
+      transform: rotate(11360deg);
       
     }
   }
@@ -313,7 +317,7 @@ body{
   
     100%{
       
-      transform: rotate(12200deg);
+      transform: rotate(12130deg);
       
     }
   }
@@ -326,7 +330,7 @@ body{
   
     100%{
       
-      transform: rotate(13100deg);
+      transform: rotate(13250deg);
     }
   }
 
