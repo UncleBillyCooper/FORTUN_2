@@ -353,7 +353,7 @@ fetch("https://api.airtable.com/v0/appZFFKMuPYcE31Qf/tblp7uWgdy7lDuMat", request
 		console.log('balanceRes: '+balanceRes);
 		setTimeout(function () {
 			PopupON()
-		}, 6500)
+		}, 2000)
 				
 	}
 
